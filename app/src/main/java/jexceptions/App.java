@@ -23,6 +23,7 @@ public class App {
 
         } catch (FileNotFoundException e) {
             System.err.println("Cannot find file");
+            e.printStackTrace();
             throw e; //rethrow the exception
         } catch (Exception e) {
             System.err.println("Some other error happened");
@@ -46,5 +47,15 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
+        try {
+            int i = 8;
+            int j = 0;
+            int v = i / j;
+            System.out.println("v is " + v );
+        } catch (ArithmeticException e) {
+            System.err.println("Cannot divide by zero");
+        } catch (Exception e) {
+            System.err.println("Some other error happened");
+        }
     }
 }
